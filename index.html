@@ -1,0 +1,78 @@
+var readlinesync=require("readline-sync");
+
+ var score=0;
+ var highscores=[
+  {
+  name: "tansi",
+  score: 5,
+},
+
+{
+  name: "pavani",
+  score: 7,
+ }, 
+]  
+
+ var username=readlinesync.question("what is your name?")
+
+  console.log("welcome"+username+"prathyusha's quiz on FRIENDS")
+
+  function play (question,answer){
+     var useranswer=readlinesync.question(question);
+
+      if(useranswer===answer){
+        console.log("right answer");
+        score=score+1;
+      } else {
+        console.log("wrong answer");
+        score=score-1;
+      }
+      console.log("current score: ",score);
+      console.log("---------")
+  }
+  var questions=[{
+      question:"How many states in india?",
+      answer:"29"
+  },
+  {
+    question:"Who was the first primeminister of india?",
+    answer:"jawaharlal nehru"
+  },
+  
+  {
+    question:"Which state is also known as the fruit bowl of india?",
+    answer:"himachal pradesh"
+    
+  },
+  {
+    question:"Which is the national sport of india?",
+    answer:"hockey"
+     
+  },
+  {
+    question: "Which state is recently formed in india?",
+    answer:"telangana"
+   
+  },
+  {
+    question:" ------------Is known as the “Festival of Lights?",
+    answer:"diwali"
+  },
+    
+    {
+    question:"Who was the first Indian woman in Space?",
+    answer:"kalpanachawla"
+  },
+  {
+    question:"How many medals india got in tokyo olympics?",
+    answer:"7"
+  }];
+   for (var i=0; i<questions.length; i++) {
+
+     var currentquestion=questions[i];
+
+     play(currentquestion.question,currentquestion.answer)
+   }
+      console.log("YAY! your scored: ",score);
+      console.log("check out the highscore");
+     
